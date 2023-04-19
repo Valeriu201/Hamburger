@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Lato", sans-serif;
+}
+.hero {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../img/spaceX-bg.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.wrap {
+  max-width: 1400px;
+  margin: auto;
+}
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1.2rem;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+}
+.logo {
+  width: 200px;
+  height: auto;
+}
+.logo svg {
+  fill: #fff;
+}
+.menu {
+  display: flex;
+  column-gap: 20px;
+}
+.link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-block;
+}
+.link::after {
+  content: "";
+  position: relative;
+  top: 4px;
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+.link:hover::after,
+.link:focus::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+.menu-right {
+  display: flex;
+  column-gap: 30px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+.line {
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  border-radius: 1px;
+}
+.menu__hamburger {
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 350px;
+  padding: 5rem 2rem 0 2rem;
+}
+.menu__hamburger a {
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 1px solid rgba(153, 148, 148, 0.8);
+  width: 100%;
+  text-align: right;
+  padding-bottom: 10px;
+  font-size: 15px;
+  transition: 0.2s;
+}
+.right-hamburger {
+  display: none;
+}
+.active {
+  display: block;
+}
+
+.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.active .line:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.active .line:nth-child(3) {
+  transform: translateY(2px) rotate(-45deg);
+}
+.menu__hamburger a:hover {
+  color: rgba(255, 255, 255, 0.4);
+}
